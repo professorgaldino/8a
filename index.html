@@ -106,6 +106,7 @@
       <button onclick="goPrev()">← Anterior</button>
       <span class="page-number" id="page-number">Página: 1</span>
       <button onclick="goNext()">Próxima →</button>
+      <button onclick="openAnalise()">📊 Análise</button>
     </div>
 
     <button onclick="window.location.href='outros.html'">Verificar outras situações →</button>
@@ -168,6 +169,12 @@
         currentIndex++;
         updateViewer();
       }
+    }
+
+    function openAnalise() {
+      const currentPage = pages[currentIndex];
+      const pageNum = currentPage.match(/\d+/)[0];
+      window.open(`analise.html?pagina=${pageNum}`, '_blank');
     }
 
     updateViewer();
